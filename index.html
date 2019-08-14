@@ -17,34 +17,35 @@
 <body>
 
     <div class="calculator">
-        <div class="screen"></div>
+        <div id ="screen" ></div>
         <div class="buttons">
             <div class="numbers">
                 
-                <button id="nove" value="9" onclick="setValue(value)" >9</button>
-                <button id = "oito" data-val="8">8</button>
-                <button id = "sete" data-val="7">7</button>
-                <button id = "seis" data-val="6">6</button>
-                <button id = "cinco" data-val="5">5</button>
-                <button id = "quatro" data-val="4">4</button>
-                <button id = "tres" data-val="3">3</button>
-                <button id = "dois" data-val="2">2</button>
-                <button id = "um" data-val="1">1</button>
-                <button id = "limpa" data-val="clear">C</button>
-                <button id = "ponto" data-val=".">.</button>
-                <button id = "zero" data-val="0" href="0">0</button>
+                
+                <button onclick="pressNum(this)">9</button>
+                <button onclick="pressNum(this)">8</button>
+                <button onclick="pressNum(this)">7</button>
+                <button onclick="pressNum(this)">6</button>
+                <button onclick="pressNum(this)">5</button>
+                <button onclick="pressNum(this)">4</button>
+                <button onclick="pressNum(this)">3</button>
+                <button onclick="pressNum(this)">2</button>
+                <button onclick="pressNum(this)">1</button>
+                <button id="limparTela" onclick="limparTudo()">C</button>
+                <button onclick="pressNum(this)">.</button>
+                <button onclick="pressNum(this)">0</button>
             </div>
             <div class="operators">
-                <button data-val="÷">÷</button>
-                <button data-val="x">x</button>
-                <button data-val="-">-</button>
-                <button data-val="+">+</button>
-                <button data-val="=">=</button>
+                <button onclick="pressOperadores(this)">/</button>
+                <button onclick="pressOperadores(this)">x</button>
+                <button onclick="pressOperadores(this)">-</button>
+                <button onclick="pressOperadores(this)">+</button>
+                <button id="igual" onclick="pressIgual(this)">=</button>
             </div>
         </div>
     </div>
 
-    <script src="kalcWeb.js"></script>
+    <script src="js/kalcWeb.js"></script>
 </body>
 
 </html>
