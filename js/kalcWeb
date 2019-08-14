@@ -1,9 +1,75 @@
-	function exe(){
-	let nov = document.getElementById('screen');
-	objNov = document.getElementById('nove');
+var screenArm = "";
+var numero = "";
+var fim ="";
+var valores = [undefined, undefined, undefined];
+var resultado = undefined;
+
+var tela = document.getElementById('screen');
+
+var telaFinal = document.getElementById('igual');
+
+function pressNum(num) {
+	numero = numero.concat(num.innerHTML);
+	//console.log(numero);
+	tela.innerText = numero;
+}
+// -------------------------------------------
+function pressOperadores(op){
+	valores[0] = numero;
+	valores[1] = op.innerHTML;
+	mostrarScreen(op.innerHTML);
+	numero = "";
+}
+
+//--------------------------------------------
+function pressIgual(ig) {
+	if(valores[0] != undefined && valores[1] != undefined && numero != ""){	
+		valores[2] = numero;
+		var ficarResultado;	
+		switch(valores[1]){
+			case '+':
+				resultado = Number(valores[0]) + Number(valores[2]);
+				break;
+			case '-':
+				resultado = Number(valores[0]) - Number(valores[2]);
+				break;
+			case 'x':
+				resultado = Number(valores[0]) * Number(valores[2]);
+				break;
+			case '/':
+				resultado = Number(valores[0]) / Number(valores[2]);
+				break;	
+		}
+		ficarResultado = resultado;
+		//console.log(resultado);
+		mostrarScreen(resultado);
+		limparTudo();
+		numero = ficarResultado.toString();
+	}
+	fim = fim.concat(ig.innerHTML);
+	//console.log(numero);
+	tela.innerText = numero;
 
 }
-function setValue(value){
-	let obj = document.getElementById('screen');
-	
-	}
+
+//---------------------------------------------------
+
+function limparMemoria(){
+	numero = "";
+}
+
+
+function mostrarScreen(conteudo) {
+	console.log(conteudo);
+	screenArm = screenArm.concat(conteudo);
+}
+
+function limparScreen() {
+	document.getElementById('screen').innerHTML ='';
+		
+}
+
+function limparTudo() {
+	limparScreen();
+	limparMemoria();
+}
